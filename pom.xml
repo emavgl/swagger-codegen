@@ -1050,11 +1050,17 @@
                 <artifactId>swagger-parser</artifactId>
                 <version>${swagger-parser-version-v1}</version>
             </dependency>
-            <!-- generators -->
+            <!-- generators 
             <dependency>
                 <groupId>io.swagger.codegen.v3</groupId>
                 <artifactId>swagger-codegen-generators</artifactId>
                 <version>${swagger-codegen-generators-version}</version>
+            </dependency>
+            -->
+            <dependency>
+                <groupId>com.github.emavgl</groupId>
+                <artifactId>swagger-codegen-generators</artifactId>
+                <version>master-SNAPSHOT</version>
             </dependency>
             <!-- jackson -->
             <dependency>
@@ -1159,6 +1165,10 @@
                 <enabled>true</enabled>
             </releases>
         </repository>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
     </repositories>
     <properties>
         <swagger-codegen-generators-version>1.0.8-SNAPSHOT</swagger-codegen-generators-version>

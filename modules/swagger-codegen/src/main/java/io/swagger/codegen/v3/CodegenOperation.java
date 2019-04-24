@@ -3,6 +3,7 @@ package io.swagger.codegen.v3;
 
 
 import io.swagger.v3.oas.models.ExternalDocumentation;
+import io.swagger.v3.oas.models.Operation;
 import io.swagger.v3.oas.models.media.Discriminator;
 import io.swagger.v3.oas.models.tags.Tag;
 
@@ -39,6 +40,7 @@ public class CodegenOperation extends CodegenObject {
     public String operationIdLowerCase; // for markdown documentation
     public String operationIdCamelCase; // for class names
     public String operationIdSnakeCase;
+    public Operation operation;
 
     /**
      * Check if there's at least one parameter
@@ -497,5 +499,9 @@ public class CodegenOperation extends CodegenObject {
 
     public Boolean getHasReference() {
         return getBooleanValue(CodegenConstants.HAS_REFERENCE_EXT_NAME);
+    }
+
+    public Operation getOperation() {
+        return operation;
     }
 }

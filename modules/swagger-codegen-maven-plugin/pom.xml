@@ -51,11 +51,18 @@
             <artifactId>swagger-codegen</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <dependency>
-            <groupId>io.swagger.codegen.v3</groupId>
-            <artifactId>swagger-codegen-generators</artifactId>
-            <version>${swagger-codegen-generators-version}</version>
-        </dependency>
+            <!-- generators 
+            <dependency>
+                <groupId>io.swagger.codegen.v3</groupId>
+                <artifactId>swagger-codegen-generators</artifactId>
+                <version>${swagger-codegen-generators-version}</version>
+            </dependency>
+            -->
+            <dependency>
+                <groupId>com.github.emavgl</groupId>
+                <artifactId>swagger-codegen-generators</artifactId>
+                <version>master-SNAPSHOT</version>
+            </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -63,6 +70,19 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+        <repositories>
+        <repository>
+            <id>sonatype-snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
+    </repositories>
     <build>
         <pluginManagement>
             <plugins>

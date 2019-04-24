@@ -299,10 +299,18 @@
             <artifactId>swagger-codegen</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <dependency>
-            <groupId>io.swagger.codegen.v3</groupId>
-            <artifactId>swagger-codegen-generators</artifactId>
-        </dependency>
+            <!-- generators 
+            <dependency>
+                <groupId>io.swagger.codegen.v3</groupId>
+                <artifactId>swagger-codegen-generators</artifactId>
+                <version>${swagger-codegen-generators-version}</version>
+            </dependency>
+            -->
+            <dependency>
+                <groupId>com.github.emavgl</groupId>
+                <artifactId>swagger-codegen-generators</artifactId>
+                <version>master-SNAPSHOT</version>
+            </dependency>
         <dependency>
             <groupId>io.swagger</groupId>
             <artifactId>swagger-inflector</artifactId>
@@ -320,6 +328,19 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+        <repositories>
+        <repository>
+            <id>sonatype-snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
+    </repositories>
     <properties>
         <dockerfile.tag.skip>true</dockerfile.tag.skip>
         <docker-latest-tag>unstable</docker-latest-tag>

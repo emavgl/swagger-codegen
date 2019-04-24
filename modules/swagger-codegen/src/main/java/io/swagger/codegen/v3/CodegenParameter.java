@@ -1,5 +1,7 @@
 package io.swagger.codegen.v3;
 
+import io.swagger.v3.oas.models.media.Schema;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,6 +19,7 @@ public class CodegenParameter extends CodegenObject {
     public Map<String, Object> allowableValues;
     public CodegenProperty items;
     public boolean nullable;
+    public Schema schema;
 
     /**
      * Determines whether this parameter is mandatory. If the parameter is in "path",
@@ -124,6 +127,7 @@ public class CodegenParameter extends CodegenObject {
         output.defaultValue = this.defaultValue;
         output.example = this.example;
         output.testExample = this.testExample;
+        output.schema = this.schema;
         if (this._enum != null) {
             output._enum = new ArrayList<String>(this._enum);
         }
@@ -378,6 +382,10 @@ public class CodegenParameter extends CodegenObject {
 
     public Number getMultipleOf() {
         return multipleOf;
+    }
+
+    public Schema getSchema() {
+        return schema;
     }
 }
 
